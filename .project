@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>RPMsg_TEST</name>
+	<name>RPMsg_TEST_CA7</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -8,16 +8,18 @@
 	</buildSpec>
 	<natures>
 		<nature>com.st.stm32cube.ide.mcu.MCUProjectNature</nature>
-		<nature>com.st.stm32cube.ide.mcu.MCUCubeProjectNature</nature>
-		<nature>com.st.stm32cube.ide.mcu.MCURootProjectNature</nature>
 		<nature>com.st.stm32cube.ide.mcu.MCUCubeIdeServicesRevAev2ProjectNature</nature>
+		<nature>com.st.stm32cube.ide.mcu.MCUCubeProjectNature</nature>
+		<nature>com.st.stm32cube.ide.mcu.MCUAdvancedStructureProjectNature</nature>
 		<nature>com.st.stm32cube.ide.mcu.MCUEndUserDisabledTrustZoneProjectNature</nature>
+		<nature>com.st.stm32cube.ide.mcu.MCURichOSCapableProjectNature</nature>
 		<nature>com.st.stm32cube.ide.mpu.projectnatures.core.MPUEmbeddedMCUProjectNature</nature>
 		<nature>com.st.stm32cube.ide.mcu.MCUSingleCpuProjectNature</nature>
+		<nature>org.eclipse.cdt.core.cnature</nature>
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1780387114900</id>
+			<id>1651071267705</id>
 			<name></name>
 			<type>22</type>
 			<matcher>
