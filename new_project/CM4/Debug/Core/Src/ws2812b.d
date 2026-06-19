@@ -1,0 +1,88 @@
+Core/Src/ws2812b.o: ../Core/Src/ws2812b.c ../Core/Inc/ws2812b.h \
+<<<<<<< HEAD
+ ../../Drivers/CMSIS/RTOS2/Include/cmsis_os2.h ../Core/Inc/main.h \
+=======
+ ../Core/Inc/main.h \
+>>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
+ ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal.h \
+ ../Core/Inc/stm32mp1xx_hal_conf.h \
+ ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_rcc.h \
+ ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_def.h \
+ ../../Drivers/CMSIS/Device/ST/STM32MP1xx/Include/stm32mp1xx.h \
+ ../../Drivers/CMSIS/Device/ST/STM32MP1xx/Include/stm32mp157dxx_cm4.h \
+ ../../Drivers/CMSIS/Include/core_cm4.h \
+ ../../Drivers/CMSIS/Include/cmsis_version.h \
+ ../../Drivers/CMSIS/Include/cmsis_compiler.h \
+ ../../Drivers/CMSIS/Include/cmsis_gcc.h \
+ ../../Drivers/CMSIS/Include/mpu_armv7.h \
+ ../../Drivers/CMSIS/Device/ST/STM32MP1xx/Include/system_stm32mp1xx.h \
+ ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_rcc_ex.h \
+ ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_exti.h \
+ ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_gpio.h \
+ ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_gpio_ex.h \
+ ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_hsem.h \
+ ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_dma.h \
+ ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_dma_ex.h \
+ ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_mdma.h \
+ ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_cortex.h \
+<<<<<<< HEAD
+ ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_adc.h \
+ ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_ll_adc.h \
+ ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_adc_ex.h \
+=======
+>>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
+ ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_ipcc.h \
+ ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_pwr.h \
+ ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_pwr_ex.h \
+ ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_tim.h \
+ ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_tim_ex.h \
+ ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_uart.h \
+ ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_uart_ex.h \
+<<<<<<< HEAD
+ ../Core/Inc/tim.h ../Core/Inc/main.h
+../Core/Inc/ws2812b.h:
+../../Drivers/CMSIS/RTOS2/Include/cmsis_os2.h:
+=======
+ ../Core/Inc/tim.h
+../Core/Inc/ws2812b.h:
+>>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
+../Core/Inc/main.h:
+../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal.h:
+../Core/Inc/stm32mp1xx_hal_conf.h:
+../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_rcc.h:
+../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_def.h:
+../../Drivers/CMSIS/Device/ST/STM32MP1xx/Include/stm32mp1xx.h:
+../../Drivers/CMSIS/Device/ST/STM32MP1xx/Include/stm32mp157dxx_cm4.h:
+../../Drivers/CMSIS/Include/core_cm4.h:
+../../Drivers/CMSIS/Include/cmsis_version.h:
+../../Drivers/CMSIS/Include/cmsis_compiler.h:
+../../Drivers/CMSIS/Include/cmsis_gcc.h:
+../../Drivers/CMSIS/Include/mpu_armv7.h:
+../../Drivers/CMSIS/Device/ST/STM32MP1xx/Include/system_stm32mp1xx.h:
+../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_rcc_ex.h:
+../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_exti.h:
+../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_gpio.h:
+../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_gpio_ex.h:
+../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_hsem.h:
+../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_dma.h:
+../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_dma_ex.h:
+../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_mdma.h:
+../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_cortex.h:
+<<<<<<< HEAD
+../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_adc.h:
+../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_ll_adc.h:
+../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_adc_ex.h:
+=======
+>>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
+../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_ipcc.h:
+../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_pwr.h:
+../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_pwr_ex.h:
+../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_tim.h:
+../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_tim_ex.h:
+../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_uart.h:
+../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_uart_ex.h:
+../Core/Inc/tim.h:
+<<<<<<< HEAD
+../Core/Inc/main.h:
+=======
+>>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9

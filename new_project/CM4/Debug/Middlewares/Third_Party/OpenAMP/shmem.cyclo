@@ -1,0 +1,10 @@
+../../Middlewares/Third_Party/OpenAMP/libmetal/lib/include/metal/list.h:47:20:metal_list_add_before	1
+../../Middlewares/Third_Party/OpenAMP/libmetal/lib/include/metal/list.h:71:20:metal_list_add_tail	1
+../../Middlewares/Third_Party/OpenAMP/libmetal/lib/include/metal/io.h:120:22:metal_io_region_size	1
+<<<<<<< HEAD
+D:/Stu15/IPC-Communication/RPMsg_UART_ADC/Middlewares/Third_Party/OpenAMP/libmetal/lib/shmem.c:18:5:metal_shmem_register_generic	2
+D:/Stu15/IPC-Communication/RPMsg_UART_ADC/Middlewares/Third_Party/OpenAMP/libmetal/lib/shmem.c:31:5:metal_shmem_open_generic	4
+=======
+D:/Stu15/IPC-Communication/RPMsg_TEST/Middlewares/Third_Party/OpenAMP/libmetal/lib/shmem.c:18:5:metal_shmem_register_generic	2
+D:/Stu15/IPC-Communication/RPMsg_TEST/Middlewares/Third_Party/OpenAMP/libmetal/lib/shmem.c:31:5:metal_shmem_open_generic	4
+>>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9

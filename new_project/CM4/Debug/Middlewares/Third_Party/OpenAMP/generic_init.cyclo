@@ -1,0 +1,7 @@
+<<<<<<< HEAD
+D:/Stu15/IPC-Communication/RPMsg_UART_ADC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/generic/generic_init.c:18:5:metal_sys_init	1
+D:/Stu15/IPC-Communication/RPMsg_UART_ADC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/generic/generic_init.c:25:6:metal_sys_finish	1
+=======
+D:/Stu15/IPC-Communication/RPMsg_TEST/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/generic/generic_init.c:18:5:metal_sys_init	1
+D:/Stu15/IPC-Communication/RPMsg_TEST/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/generic/generic_init.c:25:6:metal_sys_finish	1
+>>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9

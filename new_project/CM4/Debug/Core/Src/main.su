@@ -1,0 +1,12 @@
+<<<<<<< HEAD
+../Core/Src/main.c:44:1:__io_putchar	24	static
+../Core/Src/main.c:84:5:main	8	static
+../Core/Src/main.c:157:6:SystemClock_Config	336	static
+../Core/Src/main.c:208:6:PeriphCommonClock_Config	352	static
+../Core/Src/main.c:230:6:Error_Handler	4	static
+=======
+../Core/Src/main.c:18:13:WS2812B_ColorHold	16	static
+../Core/Src/main.c:25:5:main	16	static
+../Core/Src/main.c:56:6:SystemClock_Config	336	static
+../Core/Src/main.c:94:6:Error_Handler	4	static,ignoring_inline_asm
+>>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9

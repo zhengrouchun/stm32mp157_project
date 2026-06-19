@@ -1,0 +1,11 @@
+../Core/Src/stm32mp1xx_it.c:73:6:NMI_Handler	1
+../Core/Src/stm32mp1xx_it.c:86:6:HardFault_Handler	1
+../Core/Src/stm32mp1xx_it.c:101:6:MemManage_Handler	1
+../Core/Src/stm32mp1xx_it.c:116:6:BusFault_Handler	1
+../Core/Src/stm32mp1xx_it.c:131:6:UsageFault_Handler	1
+../Core/Src/stm32mp1xx_it.c:146:6:DebugMon_Handler	1
+../Core/Src/stm32mp1xx_it.c:159:6:SysTick_Handler	2
+../Core/Src/stm32mp1xx_it.c:188:6:DMA2_Stream0_IRQHandler	1
+../Core/Src/stm32mp1xx_it.c:202:6:IPCC_RX1_IRQHandler	1
+../Core/Src/stm32mp1xx_it.c:216:6:IPCC_TX1_IRQHandler	1
+../Core/Src/stm32mp1xx_it.c:230:6:RCC_WAKEUP_IRQHandler	1

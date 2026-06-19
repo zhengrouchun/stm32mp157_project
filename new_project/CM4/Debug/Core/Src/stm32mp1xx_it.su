@@ -1,0 +1,17 @@
+../Core/Src/stm32mp1xx_it.c:73:6:NMI_Handler	4	static
+../Core/Src/stm32mp1xx_it.c:86:6:HardFault_Handler	4	static
+../Core/Src/stm32mp1xx_it.c:101:6:MemManage_Handler	4	static
+../Core/Src/stm32mp1xx_it.c:116:6:BusFault_Handler	4	static
+../Core/Src/stm32mp1xx_it.c:131:6:UsageFault_Handler	4	static
+../Core/Src/stm32mp1xx_it.c:146:6:DebugMon_Handler	4	static
+../Core/Src/stm32mp1xx_it.c:159:6:SysTick_Handler	8	static
+../Core/Src/stm32mp1xx_it.c:188:6:DMA2_Stream0_IRQHandler	8	static
+<<<<<<< HEAD
+../Core/Src/stm32mp1xx_it.c:202:6:IPCC_RX1_IRQHandler	8	static
+../Core/Src/stm32mp1xx_it.c:216:6:IPCC_TX1_IRQHandler	8	static
+../Core/Src/stm32mp1xx_it.c:230:6:RCC_WAKEUP_IRQHandler	8	static
+=======
+../Core/Src/stm32mp1xx_it.c:201:6:IPCC_RX1_IRQHandler	8	static
+../Core/Src/stm32mp1xx_it.c:215:6:IPCC_TX1_IRQHandler	8	static
+../Core/Src/stm32mp1xx_it.c:229:6:RCC_WAKEUP_IRQHandler	8	static
+>>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9

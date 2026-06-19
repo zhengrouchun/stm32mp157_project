@@ -1,0 +1,14 @@
+../../Middlewares/Third_Party/OpenAMP/open-amp/lib/include/openamp/rpmsg.h:181:19:rpmsg_sendto	32	static
+../../Middlewares/Third_Party/OpenAMP/open-amp/lib/include/openamp/rpmsg.h:517:28:is_rpmsg_ept_ready	16	static
+../Core/Src/rpmsg_handler.c:56:6:rpmsg_handler_init	8	static
+../Core/Src/rpmsg_handler.c:74:6:rpmsg_handler_start_task	8	static
+../Core/Src/rpmsg_handler.c:93:6:rpmsg_send_string	24	static
+../Core/Src/rpmsg_handler.c:135:13:RpmsgPollingTask	16	static
+../Core/Src/rpmsg_handler.c:149:13:RPMSG_RxCpltCallback	152	static
+../Core/Src/rpmsg_handler.c:174:13:RPMSG_ParseCommand	16	static
+../Core/Src/rpmsg_handler.c:231:13:RPMSG_TrimLineEnd	24	static
+../Core/Src/rpmsg_handler.c:243:13:RPMSG_SendAckForLed	16	static
+../Core/Src/rpmsg_handler.c:266:13:RPMSG_SendUnknown	8	static
+../Core/Src/rpmsg_handler.c:271:16:RPMSG_PostLedCommand	16	static
+../Core/Src/rpmsg_handler.c:288:16:RPMSG_PostBuzzerCommand	16	static
+../Core/Src/rpmsg_handler.c:305:13:RPMSG_ErrorTrap	4	static

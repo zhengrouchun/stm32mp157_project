@@ -1,0 +1,2 @@
+../Core/Src/task_led.c:26:6:task_led_init	2
+../Core/Src/task_led.c:39:13:LedTask	6

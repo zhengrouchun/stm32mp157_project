@@ -1,0 +1,10 @@
+MANIFEST_VERSION = openstlinux-5.4-dunfell-mp1-20-06-24
+<<<<<<< HEAD
+KERNEL_DT = ./DeviceTree/RPMsg_UART_ADC/kernel
+UBOOT_DT = ./DeviceTree/RPMsg_UART_ADC/u-boot
+TFA_DT = ./DeviceTree/RPMsg_UART_ADC/tf-a
+=======
+KERNEL_DT = ./DeviceTree/RPMsg_TEST/kernel
+UBOOT_DT = ./DeviceTree/RPMsg_TEST/u-boot
+TFA_DT = ./DeviceTree/RPMsg_TEST/tf-a
+>>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9

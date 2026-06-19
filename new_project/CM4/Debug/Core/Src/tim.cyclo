@@ -1,0 +1,11 @@
+<<<<<<< HEAD
+../Core/Src/tim.c:31:6:MX_TIM2_Init	6
+../Core/Src/tim.c:85:6:HAL_TIM_Base_MspInit	3
+../Core/Src/tim.c:120:6:HAL_TIM_MspPostInit	2
+../Core/Src/tim.c:148:6:HAL_TIM_Base_MspDeInit	2
+=======
+../Core/Src/tim.c:20:6:MX_TIM2_Init	6
+../Core/Src/tim.c:62:6:HAL_TIM_Base_MspInit	3
+../Core/Src/tim.c:87:6:HAL_TIM_MspPostInit	2
+../Core/Src/tim.c:104:6:HAL_TIM_Base_MspDeInit	2
+>>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9

@@ -1,0 +1,13 @@
+<<<<<<< HEAD
+D:/Stu15/IPC-Communication/RPMsg_UART_ADC/Middlewares/Third_Party/FreeRTOS/Source/list.c:50:6:vListInitialise	1
+D:/Stu15/IPC-Communication/RPMsg_UART_ADC/Middlewares/Third_Party/FreeRTOS/Source/list.c:86:6:vListInitialiseItem	1
+D:/Stu15/IPC-Communication/RPMsg_UART_ADC/Middlewares/Third_Party/FreeRTOS/Source/list.c:98:6:vListInsertEnd	1
+D:/Stu15/IPC-Communication/RPMsg_UART_ADC/Middlewares/Third_Party/FreeRTOS/Source/list.c:128:6:vListInsert	3
+D:/Stu15/IPC-Communication/RPMsg_UART_ADC/Middlewares/Third_Party/FreeRTOS/Source/list.c:199:13:uxListRemove	2
+=======
+D:/Stu15/IPC-Communication/RPMsg_TEST/Middlewares/Third_Party/FreeRTOS/Source/list.c:50:6:vListInitialise	1
+D:/Stu15/IPC-Communication/RPMsg_TEST/Middlewares/Third_Party/FreeRTOS/Source/list.c:86:6:vListInitialiseItem	1
+D:/Stu15/IPC-Communication/RPMsg_TEST/Middlewares/Third_Party/FreeRTOS/Source/list.c:98:6:vListInsertEnd	1
+D:/Stu15/IPC-Communication/RPMsg_TEST/Middlewares/Third_Party/FreeRTOS/Source/list.c:128:6:vListInsert	3
+D:/Stu15/IPC-Communication/RPMsg_TEST/Middlewares/Third_Party/FreeRTOS/Source/list.c:199:13:uxListRemove	2
+>>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9

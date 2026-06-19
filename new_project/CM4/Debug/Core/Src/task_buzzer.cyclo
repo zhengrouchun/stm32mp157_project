@@ -1,0 +1,3 @@
+../Core/Src/task_buzzer.c:35:6:task_buzzer_init	2
+../Core/Src/task_buzzer.c:48:13:BuzzerTask	6
+../Core/Src/task_buzzer.c:85:13:BuzzerSet	1

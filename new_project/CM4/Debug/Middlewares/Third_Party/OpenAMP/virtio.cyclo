@@ -1,0 +1,11 @@
+<<<<<<< HEAD
+D:/Stu15/IPC-Communication/RPMsg_UART_ADC/Middlewares/Third_Party/OpenAMP/open-amp/lib/virtio/virtio.c:42:13:virtio_dev_name	3
+D:/Stu15/IPC-Communication/RPMsg_UART_ADC/Middlewares/Third_Party/OpenAMP/open-amp/lib/virtio/virtio.c:54:20:virtio_feature_name	5
+D:/Stu15/IPC-Communication/RPMsg_UART_ADC/Middlewares/Third_Party/OpenAMP/open-amp/lib/virtio/virtio.c:75:6:virtio_describe	1
+D:/Stu15/IPC-Communication/RPMsg_UART_ADC/Middlewares/Third_Party/OpenAMP/open-amp/lib/virtio/virtio.c:86:5:virtio_create_virtqueues	4
+=======
+D:/Stu15/IPC-Communication/RPMsg_TEST/Middlewares/Third_Party/OpenAMP/open-amp/lib/virtio/virtio.c:42:13:virtio_dev_name	3
+D:/Stu15/IPC-Communication/RPMsg_TEST/Middlewares/Third_Party/OpenAMP/open-amp/lib/virtio/virtio.c:54:20:virtio_feature_name	5
+D:/Stu15/IPC-Communication/RPMsg_TEST/Middlewares/Third_Party/OpenAMP/open-amp/lib/virtio/virtio.c:75:6:virtio_describe	1
+D:/Stu15/IPC-Communication/RPMsg_TEST/Middlewares/Third_Party/OpenAMP/open-amp/lib/virtio/virtio.c:86:5:virtio_create_virtqueues	4
+>>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
