@@ -11,7 +11,7 @@ import sys
 
 try:
     from PyQt5.QtCore import Qt, QTimer, pyqtSignal
-    from PyQt5.QtGui import QColor, QFont, QPainter, QPen
+    from PyQt5.QtGui import QColor, QCursor, QFont, QPainter, QPen
     from PyQt5.QtWidgets import (
         QApplication,
         QGridLayout,
@@ -47,6 +47,7 @@ class CircleTimer(QWidget):
     def paintEvent(self, event):
         painter = QPainter(self)
         painter.setRenderHint(QPainter.Antialiasing)
+        painter.fillRect(self.rect(), QColor("#f4f7fb"))
 
         size = min(self.width(), self.height()) - 24
         left = (self.width() - size) / 2
@@ -88,8 +89,55 @@ class PomodoroWindow(QMainWindow):
         super().__init__()
         self.is_paused = False
         self.setWindowTitle("AI 疲劳检测专注番茄钟")
+        self.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
+        self.setAttribute(Qt.WA_AcceptTouchEvents, True)
+        self.setAttribute(Qt.WA_NoSystemBackground, False)
+        self.setAutoFillBackground(True)
         self.resize(900, 620)
         self._build_ui()
+        self.setStyleSheet(
+            """
+            QWidget {
+                background: #f4f7fb;
+                color: #101828;
+                font-family: Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
+                font-size: 18px;
+            }
+            QTabWidget::pane {
+                border: 2px solid #344054;
+                background: #f4f7fb;
+            }
+            QTabBar::tab {
+                min-width: 96px;
+                min-height: 44px;
+                padding: 6px 12px;
+                border: 1px solid #667085;
+                background: #e4e7ec;
+            }
+            QTabBar::tab:selected {
+                background: #ffffff;
+                font-weight: bold;
+            }
+            QPushButton {
+                min-height: 54px;
+                border: 2px solid #344054;
+                background: #ffffff;
+                font-weight: bold;
+            }
+            QPushButton:pressed {
+                background: #d0e4ff;
+            }
+            QLineEdit {
+                min-height: 44px;
+                border: 2px solid #667085;
+                background: #ffffff;
+                padding: 4px 8px;
+            }
+            """
+        )
+        self.keep_front_timer = QTimer(self)
+        self.keep_front_timer.timeout.connect(self.keep_on_top)
+        self.keep_front_timer.start(1000)
 
     def _build_ui(self):
         tabs = QTabWidget()
@@ -123,9 +171,11 @@ class PomodoroWindow(QMainWindow):
         self.start_button = QPushButton("开始专注")
         self.pause_button = QPushButton("暂停")
         self.stop_button = QPushButton("结束专注")
+        self.exit_button = QPushButton("退出")
         button_layout.addWidget(self.start_button)
         button_layout.addWidget(self.pause_button)
         button_layout.addWidget(self.stop_button)
+        button_layout.addWidget(self.exit_button)
 
         test_layout = QHBoxLayout()
         for color, text in (("R", "红灯"), ("G", "绿灯"), ("B", "蓝灯"), ("OFF", "熄灭")):
@@ -146,6 +196,7 @@ class PomodoroWindow(QMainWindow):
         self.start_button.clicked.connect(self._emit_start)
         self.pause_button.clicked.connect(self._emit_pause_or_resume)
         self.stop_button.clicked.connect(self.stop_requested.emit)
+        self.exit_button.clicked.connect(QApplication.instance().quit)
         return page
 
     def _build_history_tab(self):
@@ -236,6 +287,21 @@ class PomodoroWindow(QMainWindow):
             ["id", "timestamp", "command_sent", "ack_received", "success", "fail_reason"],
         )
 
+    def showEvent(self, event):
+        super().showEvent(event)
+        self.keep_on_top()
+
+    def keep_on_top(self):
+        self.raise_()
+        self.activateWindow()
+        self.setFocus(Qt.ActiveWindowFocusReason)
+
+    def keyPressEvent(self, event):
+        if event.key() == Qt.Key_Escape:
+            QApplication.instance().quit()
+        else:
+            super().keyPressEvent(event)
+
     @staticmethod
     def _fill_table(table, rows, keys):
         table.setRowCount(len(rows))
@@ -248,6 +314,7 @@ class PomodoroWindow(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    app.setOverrideCursor(QCursor(Qt.BlankCursor))
     window = PomodoroWindow()
 
     demo_remaining = {"value": 25 * 60}
@@ -260,5 +327,5 @@ if __name__ == "__main__":
     timer.timeout.connect(tick_demo)
     timer.start(1000)
 
-    window.show()
+    window.showFullScreen()
     sys.exit(app.exec_())

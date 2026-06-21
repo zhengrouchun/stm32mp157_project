@@ -9,11 +9,44 @@ LED/BEEP 命令给 M4。
 """
 
 import os
+import queue
 import sys
+import threading
 
 from db_manager import DBManager
 from rpmsg_client import RPMsgClient
+from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QCursor
+from PyQt5.QtCore import QObject, pyqtSignal
 from pomodoro_ui import QApplication, QTimer, PomodoroWindow
+
+
+class HardwareWorker(QObject):
+    """Serializes RPMsg commands off the UI thread."""
+
+    status_changed = pyqtSignal(str)
+    data_changed = pyqtSignal()
+
+    def __init__(self, rpmsg_client):
+        super().__init__()
+        self.rpmsg_client = rpmsg_client
+        self.commands = queue.Queue()
+        self.thread = threading.Thread(target=self._run, daemon=True)
+        self.thread.start()
+
+    def submit(self, action):
+        self.commands.put(action)
+
+    def _run(self):
+        while True:
+            action = self.commands.get()
+            try:
+                result = action()
+                if isinstance(result, str):
+                    self.status_changed.emit(result)
+            finally:
+                self.data_changed.emit()
+                self.commands.task_done()
 
 
 class PomodoroController:
@@ -29,6 +62,10 @@ class PomodoroController:
         self.window = window
         self.db_manager = db_manager
         self.rpmsg_client = rpmsg_client
+        self.hardware_worker = HardwareWorker(rpmsg_client)
+        self.hardware_worker.status_changed.connect(self.window.set_m4_status)
+        self.hardware_worker.data_changed.connect(self._mark_data_dirty)
+        self.data_dirty = False
 
         self.state = self.STATE_IDLE
         self.session_id = None
@@ -38,6 +75,10 @@ class PomodoroController:
         self.timer = QTimer()
         self.timer.timeout.connect(self._tick)
         self.timer.start(1000)
+
+        self.refresh_timer = QTimer()
+        self.refresh_timer.timeout.connect(self._refresh_ui_data_if_dirty)
+        self.refresh_timer.start(3000)
 
         self._connect_signals()
         self._load_settings_to_ui()
@@ -63,10 +104,10 @@ class PomodoroController:
         self.state = self.STATE_FOCUS
 
         # 进入专注时点亮绿色，和 README 第 4.5 节“正常专注”映射保持一致。
-        self.rpmsg_client.send_led_green()
+        self._send_hardware(self.rpmsg_client.send_led_green)
         self.window.set_status("专注中")
         self.window.set_paused(False)
-        self._refresh_ui_data()
+        self._mark_data_dirty()
 
     def pause_focus(self):
         if self.state != self.STATE_FOCUS:
@@ -79,14 +120,14 @@ class PomodoroController:
         if self.state != self.STATE_PAUSED:
             return
         self.state = self.STATE_FOCUS
-        self.rpmsg_client.send_led_green()
+        self._send_hardware(self.rpmsg_client.send_led_green)
         self.window.set_status("专注中")
         self.window.set_paused(False)
 
     def stop_focus(self, status):
         if self.session_id is None:
             self.state = self.STATE_IDLE
-            self.rpmsg_client.send_led_off()
+            self._send_hardware(self.rpmsg_client.send_led_off)
             self.window.set_status("空闲")
             return
 
@@ -96,10 +137,10 @@ class PomodoroController:
         self.remaining_seconds = self.total_seconds
 
         # 结束或空闲时熄灭灯带，避免 M4 保持上一种颜色造成状态误解。
-        self.rpmsg_client.send_led_off()
+        self._send_hardware(self.rpmsg_client.send_led_off)
         self.window.set_status("空闲")
         self.window.set_paused(False)
-        self._refresh_ui_data()
+        self._mark_data_dirty()
 
     def handle_fatigue_result(self, result):
         """接入队员 B 的 fatigue_detector.detect(frame) 返回结果。
@@ -133,30 +174,30 @@ class PomodoroController:
         if alarm_triggered:
             self.state = self.STATE_FATIGUE
             self.window.set_status("疲劳警告")
-            self.rpmsg_client.send_led_red()
+            self._send_hardware(self.rpmsg_client.send_led_red)
             if beep_enabled:
-                self.rpmsg_client.send_beep_once()
+                self._send_hardware(self.rpmsg_client.send_beep_once)
         elif self.state != self.STATE_PAUSED:
             self.state = self.STATE_FOCUS
             self.window.set_status("专注中")
-            self.rpmsg_client.send_led_green()
+            self._send_hardware(self.rpmsg_client.send_led_green)
 
-        self._refresh_ui_data()
+        self._mark_data_dirty()
 
     def test_led(self, color):
         if color == "R":
-            self.rpmsg_client.send_led_red()
+            self._send_hardware(self.rpmsg_client.send_led_red)
         elif color == "G":
-            self.rpmsg_client.send_led_green()
+            self._send_hardware(self.rpmsg_client.send_led_green)
         elif color == "B":
-            self.rpmsg_client.send_led_blue()
+            self._send_hardware(self.rpmsg_client.send_led_blue)
         elif color == "OFF":
-            self.rpmsg_client.send_led_off()
-        self._refresh_ui_data()
+            self._send_hardware(self.rpmsg_client.send_led_off)
+        self._mark_data_dirty()
 
     def test_beep(self):
-        self.rpmsg_client.send_beep_once()
-        self._refresh_ui_data()
+        self._send_hardware(self.rpmsg_client.send_beep_once)
+        self._mark_data_dirty()
 
     def save_settings(self, settings):
         for key, value in settings.items():
@@ -164,10 +205,6 @@ class PomodoroController:
         self._load_settings_to_ui()
 
     def _tick(self):
-        event = self.rpmsg_client.read_event(timeout=0.01)
-        if event == "EVENT:ERR_HAL":
-            self.window.set_m4_status("硬件初始化错误")
-
         if self.state in (self.STATE_FOCUS, self.STATE_FATIGUE):
             self.remaining_seconds = max(0, self.remaining_seconds - 1)
             if self.remaining_seconds == 0:
@@ -176,11 +213,24 @@ class PomodoroController:
         self.window.set_timer(self.remaining_seconds, self.total_seconds)
 
     def _try_ping_m4(self):
+        self._send_hardware(self._ping_m4)
+        self._mark_data_dirty()
+
+    def _ping_m4(self):
         if self.rpmsg_client.ping():
-            self.window.set_m4_status("已连接")
-        else:
-            self.window.set_m4_status(self.rpmsg_client.last_fail_reason or "未连接")
-        self._refresh_ui_data()
+            return "已连接"
+        return self.rpmsg_client.last_fail_reason or "未连接"
+
+    def _send_hardware(self, action):
+        self.hardware_worker.submit(action)
+
+    def _mark_data_dirty(self):
+        self.data_dirty = True
+
+    def _refresh_ui_data_if_dirty(self):
+        if self.data_dirty:
+            self.data_dirty = False
+            self._refresh_ui_data()
 
     def _refresh_ui_data(self):
         today = self.db_manager.get_daily_summary(1)
@@ -211,6 +261,7 @@ class PomodoroController:
 
 def main():
     app = QApplication(sys.argv)
+    app.setOverrideCursor(QCursor(Qt.BlankCursor))
     base_dir = os.path.dirname(os.path.abspath(__file__))
     db_path = os.path.join(base_dir, "tasks.db")
 
@@ -219,7 +270,7 @@ def main():
     window = PomodoroWindow()
     PomodoroController(window, db_manager, rpmsg_client)
 
-    window.show()
+    window.showFullScreen()
     sys.exit(app.exec_())
 
 
