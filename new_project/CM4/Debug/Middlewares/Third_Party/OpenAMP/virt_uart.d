@@ -1,11 +1,6 @@
 Middlewares/Third_Party/OpenAMP/virt_uart.o: \
-<<<<<<< HEAD
- D:/Stu15/IPC-Communication/RPMsg_UART_ADC/Middlewares/Third_Party/OpenAMP/virtual_driver/virt_uart.c \
- D:/Stu15/IPC-Communication/RPMsg_UART_ADC/Middlewares/Third_Party/OpenAMP/virtual_driver/virt_uart.h \
-=======
- D:/Stu15/IPC-Communication/RPMsg_TEST/Middlewares/Third_Party/OpenAMP/virtual_driver/virt_uart.c \
- D:/Stu15/IPC-Communication/RPMsg_TEST/Middlewares/Third_Party/OpenAMP/virtual_driver/virt_uart.h \
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
+ D:/Stu15/IPC-Communication/RPMsg_UART_ADC/new_project/Middlewares/Third_Party/OpenAMP/virtual_driver/virt_uart.c \
+ D:/Stu15/IPC-Communication/RPMsg_UART_ADC/new_project/Middlewares/Third_Party/OpenAMP/virtual_driver/virt_uart.h \
  ../OPENAMP/openamp.h \
  ../../Middlewares/Third_Party/OpenAMP/open-amp/lib/include/openamp/open_amp.h \
  ../../Middlewares/Third_Party/OpenAMP/open-amp/lib/include/openamp/rpmsg.h \
@@ -39,11 +34,7 @@ Middlewares/Third_Party/OpenAMP/virt_uart.o: \
  ../../Middlewares/Third_Party/OpenAMP/open-amp/lib/include/openamp/remoteproc.h \
  ../../Middlewares/Third_Party/OpenAMP/open-amp/lib/include/openamp/remoteproc_virtio.h \
  ../OPENAMP/openamp_conf.h ../OPENAMP/mbox_ipcc.h
-<<<<<<< HEAD
-D:/Stu15/IPC-Communication/RPMsg_UART_ADC/Middlewares/Third_Party/OpenAMP/virtual_driver/virt_uart.h:
-=======
-D:/Stu15/IPC-Communication/RPMsg_TEST/Middlewares/Third_Party/OpenAMP/virtual_driver/virt_uart.h:
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
+D:/Stu15/IPC-Communication/RPMsg_UART_ADC/new_project/Middlewares/Third_Party/OpenAMP/virtual_driver/virt_uart.h:
 ../OPENAMP/openamp.h:
 ../../Middlewares/Third_Party/OpenAMP/open-amp/lib/include/openamp/open_amp.h:
 ../../Middlewares/Third_Party/OpenAMP/open-amp/lib/include/openamp/rpmsg.h:

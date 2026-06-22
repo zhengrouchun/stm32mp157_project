@@ -1,9 +1,5 @@
 Middlewares/Third_Party/OpenAMP/generic_device.o: \
-<<<<<<< HEAD
- D:/Stu15/IPC-Communication/RPMsg_UART_ADC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/generic/generic_device.c \
-=======
- D:/Stu15/IPC-Communication/RPMsg_TEST/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/generic/generic_device.c \
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
+ D:/Stu15/IPC-Communication/RPMsg_UART_ADC/new_project/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/generic/generic_device.c \
  ../../Middlewares/Third_Party/OpenAMP/libmetal/lib/include/metal/device.h \
  ../../Middlewares/Third_Party/OpenAMP/libmetal/lib/include/metal/io.h \
  ../../Middlewares/Third_Party/OpenAMP/libmetal/lib/include/metal/assert.h \

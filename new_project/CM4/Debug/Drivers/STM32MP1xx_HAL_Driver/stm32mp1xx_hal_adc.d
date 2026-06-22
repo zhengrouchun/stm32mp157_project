@@ -1,5 +1,5 @@
 Drivers/STM32MP1xx_HAL_Driver/stm32mp1xx_hal_adc.o: \
- D:/Stu15/IPC-Communication/RPMsg_UART_ADC/Drivers/STM32MP1xx_HAL_Driver/Src/stm32mp1xx_hal_adc.c \
+ D:/Stu15/IPC-Communication/RPMsg_UART_ADC/new_project/Drivers/STM32MP1xx_HAL_Driver/Src/stm32mp1xx_hal_adc.c \
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal.h \
  ../Core/Inc/stm32mp1xx_hal_conf.h \
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_rcc.h \

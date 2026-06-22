@@ -1,9 +1,5 @@
 Middlewares/Third_Party/OpenAMP/virtio.o: \
-<<<<<<< HEAD
- D:/Stu15/IPC-Communication/RPMsg_UART_ADC/Middlewares/Third_Party/OpenAMP/open-amp/lib/virtio/virtio.c \
-=======
- D:/Stu15/IPC-Communication/RPMsg_TEST/Middlewares/Third_Party/OpenAMP/open-amp/lib/virtio/virtio.c \
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
+ D:/Stu15/IPC-Communication/RPMsg_UART_ADC/new_project/Middlewares/Third_Party/OpenAMP/open-amp/lib/virtio/virtio.c \
  ../../Middlewares/Third_Party/OpenAMP/open-amp/lib/include/openamp/virtio.h \
  ../../Middlewares/Third_Party/OpenAMP/open-amp/lib/include/openamp/virtqueue.h \
  ../../Middlewares/Third_Party/OpenAMP/open-amp/lib/include/openamp/virtio_ring.h \

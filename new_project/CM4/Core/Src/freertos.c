@@ -24,7 +24,6 @@
 #include "FreeRTOS.h"
 #include "cmsis_os2.h"
 
-<<<<<<< HEAD
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "rpmsg_handler.h"
@@ -32,13 +31,6 @@
 #include "task_led.h"
 
 /* USER CODE END Includes */
-=======
-/* Private includes ----------------------------------------------------------*/
-/* USER CODE BEGIN Includes */
-#include "queue.h"
-
-/* USER CODE END Includes */
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
@@ -69,15 +61,6 @@ const osThreadAttr_t defaultTask_attributes = {
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
-<<<<<<< HEAD
-=======
-extern QueueHandle_t xLedQueue;
-extern QueueHandle_t xBeepQueue;
-
-extern void vTaskOpenAMP_Poll(void *pvParameters);
-extern void vTaskWS2812B_Ctrl(void *pvParameters);
-extern void vTaskBuzzer_Ctrl(void *pvParameters);
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
 
 /* USER CODE END FunctionPrototypes */
 
@@ -115,38 +98,12 @@ void MX_FREERTOS_Init(void) {
   /* creation of defaultTask */
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
 
-<<<<<<< HEAD
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   rpmsg_handler_start_task();
   task_led_init();
   task_buzzer_init();
   /* USER CODE END RTOS_THREADS */
-=======
-  /* USER CODE BEGIN RTOS_THREADS */
-  /* add threads, ... */
-  xLedQueue  = xQueueCreate(5, sizeof(uint32_t));
-  xBeepQueue = xQueueCreate(5, sizeof(uint32_t));
-
-  if ((xLedQueue == NULL) || (xBeepQueue == NULL))
-  {
-    Error_Handler();
-  }
-
-  if (xTaskCreate(vTaskOpenAMP_Poll, "OpenAMP_Poll", 256, NULL, 3, NULL) != pdPASS)
-  {
-    Error_Handler();
-  }
-  if (xTaskCreate(vTaskWS2812B_Ctrl, "WS2812B_Ctrl", 512, NULL, 2, NULL) != pdPASS)
-  {
-    Error_Handler();
-  }
-  if (xTaskCreate(vTaskBuzzer_Ctrl, "Buzzer_Ctrl", 256, NULL, 2, NULL) != pdPASS)
-  {
-    Error_Handler();
-  }
-  /* USER CODE END RTOS_THREADS */
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
 
   /* USER CODE BEGIN RTOS_EVENTS */
   /* add events, ... */

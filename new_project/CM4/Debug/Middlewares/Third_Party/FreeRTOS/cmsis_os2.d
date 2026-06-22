@@ -1,9 +1,5 @@
 Middlewares/Third_Party/FreeRTOS/cmsis_os2.o: \
-<<<<<<< HEAD
- D:/Stu15/IPC-Communication/RPMsg_UART_ADC/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c \
-=======
- D:/Stu15/IPC-Communication/RPMsg_TEST/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c \
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
+ D:/Stu15/IPC-Communication/RPMsg_UART_ADC/new_project/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../Core/Inc/FreeRTOSConfig.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
@@ -19,13 +15,8 @@ Middlewares/Third_Party/FreeRTOS/cmsis_os2.o: \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
-<<<<<<< HEAD
- D:/Stu15/IPC-Communication/RPMsg_UART_ADC/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/freertos_mpool.h \
- D:/Stu15/IPC-Communication/RPMsg_UART_ADC/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/freertos_os2.h \
-=======
- D:/Stu15/IPC-Communication/RPMsg_TEST/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/freertos_mpool.h \
- D:/Stu15/IPC-Communication/RPMsg_TEST/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/freertos_os2.h \
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
+ D:/Stu15/IPC-Communication/RPMsg_UART_ADC/new_project/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/freertos_mpool.h \
+ D:/Stu15/IPC-Communication/RPMsg_UART_ADC/new_project/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/freertos_os2.h \
  ../../Drivers/CMSIS/Device/ST/STM32MP1xx/Include/stm32mp1xx.h \
  ../../Drivers/CMSIS/Device/ST/STM32MP1xx/Include/stm32mp157dxx_cm4.h \
  ../../Drivers/CMSIS/Include/core_cm4.h \
@@ -47,12 +38,9 @@ Middlewares/Third_Party/FreeRTOS/cmsis_os2.o: \
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_dma_ex.h \
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_mdma.h \
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_cortex.h \
-<<<<<<< HEAD
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_adc.h \
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_ll_adc.h \
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_adc_ex.h \
-=======
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_ipcc.h \
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_pwr.h \
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_pwr_ex.h \
@@ -77,13 +65,8 @@ Middlewares/Third_Party/FreeRTOS/cmsis_os2.o: \
 ../../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h:
 ../../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 ../../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
-<<<<<<< HEAD
-D:/Stu15/IPC-Communication/RPMsg_UART_ADC/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/freertos_mpool.h:
-D:/Stu15/IPC-Communication/RPMsg_UART_ADC/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/freertos_os2.h:
-=======
-D:/Stu15/IPC-Communication/RPMsg_TEST/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/freertos_mpool.h:
-D:/Stu15/IPC-Communication/RPMsg_TEST/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/freertos_os2.h:
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
+D:/Stu15/IPC-Communication/RPMsg_UART_ADC/new_project/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/freertos_mpool.h:
+D:/Stu15/IPC-Communication/RPMsg_UART_ADC/new_project/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/freertos_os2.h:
 ../../Drivers/CMSIS/Device/ST/STM32MP1xx/Include/stm32mp1xx.h:
 ../../Drivers/CMSIS/Device/ST/STM32MP1xx/Include/stm32mp157dxx_cm4.h:
 ../../Drivers/CMSIS/Include/core_cm4.h:
@@ -105,12 +88,9 @@ D:/Stu15/IPC-Communication/RPMsg_TEST/Middlewares/Third_Party/FreeRTOS/Source/CM
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_dma_ex.h:
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_mdma.h:
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_cortex.h:
-<<<<<<< HEAD
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_adc.h:
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_ll_adc.h:
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_adc_ex.h:
-=======
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_ipcc.h:
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_pwr.h:
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_pwr_ex.h:

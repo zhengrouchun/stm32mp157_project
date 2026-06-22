@@ -38,57 +38,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-<<<<<<< HEAD
 BUILD_ARTIFACT_NAME := RPMsg_UART_ADC_CM4
-=======
-BUILD_ARTIFACT_NAME := RPMsg_TEST_CM4
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-<<<<<<< HEAD
 RPMsg_UART_ADC_CM4.elf \
 
 MAP_FILES += \
 RPMsg_UART_ADC_CM4.map \
-=======
-RPMsg_TEST_CM4.elf \
-
-MAP_FILES += \
-RPMsg_TEST_CM4.map \
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-<<<<<<< HEAD
 RPMsg_UART_ADC_CM4.list \
-=======
-RPMsg_TEST_CM4.list \
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-<<<<<<< HEAD
 main-build: RPMsg_UART_ADC_CM4.elf secondary-outputs
 
 # Tool invocations
-RPMsg_UART_ADC_CM4.elf RPMsg_UART_ADC_CM4.map: $(OBJS) $(USER_OBJS) D:\Stu15\IPC-Communication\RPMsg_UART_ADC\CM4\STM32MP157DAAX_RAM.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "RPMsg_UART_ADC_CM4.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Stu15\IPC-Communication\RPMsg_UART_ADC\CM4\STM32MP157DAAX_RAM.ld" --specs=nosys.specs -Wl,-Map="RPMsg_UART_ADC_CM4.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
-=======
-main-build: RPMsg_TEST_CM4.elf secondary-outputs
-
-# Tool invocations
-RPMsg_TEST_CM4.elf RPMsg_TEST_CM4.map: $(OBJS) $(USER_OBJS) D:\Stu15\IPC-Communication\RPMsg_TEST\CM4\STM32MP157DAAX_RAM.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "RPMsg_TEST_CM4.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Stu15\IPC-Communication\RPMsg_TEST\CM4\STM32MP157DAAX_RAM.ld" --specs=nosys.specs -Wl,-Map="RPMsg_TEST_CM4.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
+RPMsg_UART_ADC_CM4.elf RPMsg_UART_ADC_CM4.map: $(OBJS) $(USER_OBJS) D:\Stu15\IPC-Communication\RPMsg_UART_ADC\new_project\CM4\STM32MP157DAAX_RAM.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "RPMsg_UART_ADC_CM4.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Stu15\IPC-Communication\RPMsg_UART_ADC\new_project\CM4\STM32MP157DAAX_RAM.ld" --specs=nosys.specs -Wl,-Map="RPMsg_UART_ADC_CM4.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -97,23 +74,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-<<<<<<< HEAD
 RPMsg_UART_ADC_CM4.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "RPMsg_UART_ADC_CM4.list"
-=======
-RPMsg_TEST_CM4.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "RPMsg_TEST_CM4.list"
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-<<<<<<< HEAD
 	-$(RM) RPMsg_UART_ADC_CM4.elf RPMsg_UART_ADC_CM4.list RPMsg_UART_ADC_CM4.map default.size.stdout
-=======
-	-$(RM) RPMsg_TEST_CM4.elf RPMsg_TEST_CM4.list RPMsg_TEST_CM4.map default.size.stdout
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)

@@ -1,10 +1,6 @@
 /* USER CODE BEGIN Header */
 /*
-<<<<<<< HEAD
  * FreeRTOS Kernel V10.2.1
-=======
- * FreeRTOS Kernel V10.6.2
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
  * Portion Copyright (C) 2017 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  * Portion Copyright (C) 2019 StMicroelectronics, Inc.  All Rights Reserved.
  *
@@ -23,11 +19,7 @@
  * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
  * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-<<<<<<< HEAD
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-=======
- * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE .
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
  *
  * http://www.FreeRTOS.org
  * http://aws.amazon.com/freertos
@@ -78,11 +70,7 @@ void xPortSysTickHandler(void);
 #define configUSE_SB_COMPLETED_CALLBACK          ( 0 )
 #define configUSE_MINI_LIST_ITEM                ( 1 )
 #define configMINIMAL_STACK_SIZE                 ((uint16_t)128)
-<<<<<<< HEAD
 #define configTOTAL_HEAP_SIZE                    ((size_t)16384)
-=======
-#define configTOTAL_HEAP_SIZE                    ((size_t)3072)
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
 #define configMAX_TASK_NAME_LEN                  ( 16 )
 #define configHEAP_CLEAR_MEMORY_ON_FREE          valueNotSetted
 #define configUSE_TRACE_FACILITY                 1

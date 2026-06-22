@@ -32,7 +32,7 @@ class RPMsgClient:
         "PING": "ACK:PING",
     }
 
-    def __init__(self, dev_path="/dev/ttyRPMSG0", timeout=0.5, db_manager=None):
+    def __init__(self, dev_path="/dev/ttyRPMSG0", timeout=0.15, db_manager=None):
         self.dev_path = dev_path
         self.timeout = timeout
         self.db_manager = db_manager

@@ -30,12 +30,9 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_dma_ex.h \
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_mdma.h \
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_cortex.h \
-<<<<<<< HEAD
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_adc.h \
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_ll_adc.h \
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_adc_ex.h \
-=======
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_ipcc.h \
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_pwr.h \
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_pwr_ex.h \
@@ -44,13 +41,8 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_uart.h \
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_uart_ex.h \
  ../../Drivers/CMSIS/RTOS2/Include/cmsis_os2.h \
-<<<<<<< HEAD
  ../Core/Inc/rpmsg_handler.h ../Core/Inc/task_buzzer.h \
  ../Core/Inc/task_led.h
-=======
- ../../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
- ../../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
 ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
 ../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
@@ -82,12 +74,9 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_dma_ex.h:
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_mdma.h:
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_cortex.h:
-<<<<<<< HEAD
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_adc.h:
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_ll_adc.h:
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_adc_ex.h:
-=======
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_ipcc.h:
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_pwr.h:
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_pwr_ex.h:
@@ -96,11 +85,6 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_uart.h:
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_uart_ex.h:
 ../../Drivers/CMSIS/RTOS2/Include/cmsis_os2.h:
-<<<<<<< HEAD
 ../Core/Inc/rpmsg_handler.h:
 ../Core/Inc/task_buzzer.h:
 ../Core/Inc/task_led.h:
-=======
-../../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
-../../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9

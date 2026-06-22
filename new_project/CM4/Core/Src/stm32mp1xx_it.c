@@ -192,10 +192,7 @@ void DMA2_Stream0_IRQHandler(void)
   /* USER CODE END DMA2_Stream0_IRQn 0 */
   HAL_DMA_IRQHandler(&hdma_tim2_ch3);
   /* USER CODE BEGIN DMA2_Stream0_IRQn 1 */
-<<<<<<< HEAD
 
-=======
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
   /* USER CODE END DMA2_Stream0_IRQn 1 */
 }
 

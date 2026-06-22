@@ -84,5 +84,5 @@ static void BuzzerTask(void *argument)
 
 static void BuzzerSet(uint8_t on)
 {
-  HAL_GPIO_WritePin(GPIOG, GPIO_PIN_7, (on != 0U) ? BUZZER_ON_LEVEL : BUZZER_OFF_LEVEL);
+  HAL_GPIO_WritePin(BEEP_GPIO_Port, BEEP_Pin, (on != 0U) ? BUZZER_ON_LEVEL : BUZZER_OFF_LEVEL);
 }

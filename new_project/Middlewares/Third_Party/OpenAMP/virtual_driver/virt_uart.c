@@ -46,16 +46,11 @@
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* this string will be sent to remote processor */
-<<<<<<< HEAD
 #define RPMSG_SERVICE_NAME              "rpmsg-tty-channel"
-=======
-#define RPMSG_SERVICE_NAME              "rpmsg-tty"
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
 
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 
-<<<<<<< HEAD
 static int VIRT_UART_read_cb(struct rpmsg_endpoint *ept, void *data,
 			    size_t len, uint32_t src, void *priv)
 {
@@ -69,16 +64,6 @@ static int VIRT_UART_read_cb(struct rpmsg_endpoint *ept, void *data,
 
   huart->pRxBuffPtr = data;
   huart->RxXferSize = len;
-=======
-static int VIRT_UART_read_cb(struct rpmsg_endpoint *ept, void *data,
-			    size_t len, uint32_t src, void *priv)
-{
-  VIRT_UART_HandleTypeDef *huart = metal_container_of(ept, VIRT_UART_HandleTypeDef, ept);
-  (void)src;
-
-  huart->pRxBuffPtr = data;
-  huart->RxXferSize = len;
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
   if (huart->RxCpltCallback != NULL) {
     huart->RxCpltCallback(huart);
   }

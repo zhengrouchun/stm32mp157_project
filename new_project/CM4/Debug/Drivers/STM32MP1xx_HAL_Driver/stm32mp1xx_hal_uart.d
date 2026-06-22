@@ -1,9 +1,5 @@
 Drivers/STM32MP1xx_HAL_Driver/stm32mp1xx_hal_uart.o: \
-<<<<<<< HEAD
- D:/Stu15/IPC-Communication/RPMsg_UART_ADC/Drivers/STM32MP1xx_HAL_Driver/Src/stm32mp1xx_hal_uart.c \
-=======
- D:/Stu15/IPC-Communication/RPMsg_TEST/Drivers/STM32MP1xx_HAL_Driver/Src/stm32mp1xx_hal_uart.c \
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
+ D:/Stu15/IPC-Communication/RPMsg_UART_ADC/new_project/Drivers/STM32MP1xx_HAL_Driver/Src/stm32mp1xx_hal_uart.c \
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal.h \
  ../Core/Inc/stm32mp1xx_hal_conf.h \
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_rcc.h \
@@ -25,12 +21,9 @@ Drivers/STM32MP1xx_HAL_Driver/stm32mp1xx_hal_uart.o: \
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_dma_ex.h \
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_mdma.h \
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_cortex.h \
-<<<<<<< HEAD
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_adc.h \
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_ll_adc.h \
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_adc_ex.h \
-=======
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_ipcc.h \
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_pwr.h \
  ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_pwr_ex.h \
@@ -59,12 +52,9 @@ Drivers/STM32MP1xx_HAL_Driver/stm32mp1xx_hal_uart.o: \
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_dma_ex.h:
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_mdma.h:
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_cortex.h:
-<<<<<<< HEAD
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_adc.h:
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_ll_adc.h:
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_adc_ex.h:
-=======
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_ipcc.h:
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_pwr.h:
 ../../Drivers/STM32MP1xx_HAL_Driver/Inc/stm32mp1xx_hal_pwr_ex.h:

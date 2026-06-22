@@ -1,9 +1,8 @@
-<<<<<<< HEAD
-﻿/* USER CODE BEGIN Header */
+/* USER CODE BEGIN Header */
 /**
   ******************************************************************************
   * @file    ws2812b.c
-  * @brief   WS2812B 鐏甫椹卞姩瀹炵幇锛屼娇鐢?TIM2_CH3 PWM + DMA 杈撳嚭涓ユ牸鏃跺簭銆?  ******************************************************************************
+  * @brief   WS2812B 閻忣垰鐢す鍗炲З鐎圭偟骞囬敍灞煎▏閻?TIM2_CH3 PWM + DMA 鏉堟挸鍤稉銉︾壐閺冭泛绨妴?  ******************************************************************************
   */
 /* USER CODE END Header */
 
@@ -42,7 +41,7 @@ void ws2812b_init(void)
     .name = "Ws2812DmaSem"
   };
 
-  /* 杩欓噷涓嶅垵濮嬪寲 TIM2/PB10/DMA锛屽洜涓鸿繖浜涜祫婧愮敱 CubeMX 缁熶竴鐢熸垚銆?   * 椹卞姩鍙垱寤哄悓姝ュ璞″苟娓呯┖杞欢鍍忕礌缂撳瓨锛岄伩鍏嶇牬鍧?main.c 涓凡鏈夌殑澶栬閰嶇疆杈圭晫銆?*/
+  /* 鏉╂瑩鍣锋稉宥呭灥婵瀵?TIM2/PB10/DMA閿涘苯娲滄稉楦跨箹娴滄稖绁┃鎰暠 CubeMX 缂佺喍绔撮悽鐔稿灇閵?   * 妞瑰崬濮╅崣顏勫灡瀵ゅ搫鎮撳銉ヮ嚠鐠炩€宠嫙濞撳懐鈹栨潪顖欐閸嶅繒绀岀紓鎾崇摠閿涘矂浼╅崗宥囩壃閸?main.c 娑擃厼鍑￠張澶屾畱婢舵牞顔曢柊宥囩枂鏉堝湱鏅妴?*/
   ws2812b_dma_done_sem = osSemaphoreNew(1U, 0U, &sem_attr);
   memset(led_pixels, 0, sizeof(led_pixels));
   memset(dma_buf, 0, sizeof(dma_buf));
@@ -65,7 +64,7 @@ void ws2812b_set_one(uint8_t idx, uint8_t r, uint8_t g, uint8_t b)
     return;
   }
 
-  /* WS2812B 鐨勭嚎涓婂崗璁浐瀹氫负 GRB 椤哄簭锛岃€屼笂灞備笟鍔℃洿鑷劧鍦扮敤 RGB 琛ㄨ揪棰滆壊銆?   * 鍦ㄩ┍鍔ㄨ竟鐣屽畬鎴?RGB->GRB 杞崲锛屽彲浠ヨ LED 浠诲姟鍙叧蹇冣€滅孩/缁?钃濃€濈殑涓氬姟鍚箟锛?   * 涓嶆妸鍏蜂綋鐏彔鍗忚娉勬紡鍒颁换鍔″眰锛屽悗缁浛鎹㈢伅甯﹀瀷鍙锋椂涔熸洿瀹规槗鏀舵暃淇敼鑼冨洿銆?*/
+  /* WS2812B 閻ㄥ嫮鍤庢稉濠傚礂鐠侇喖娴愮€规矮璐?GRB 妞ゅ搫绨敍宀冣偓灞肩瑐鐏炲倷绗熼崝鈩冩纯閼奉亞鍔ч崷鎵暏 RGB 鐞涖劏鎻０婊嗗閵?   * 閸︺劑鈹嶉崝銊ㄧ珶閻ｅ苯鐣幋?RGB->GRB 鏉烆剚宕查敍灞藉讲娴犮儴顔€ LED 娴犺濮熼崣顏勫彠韫囧啠鈧粎瀛?缂?閽冩績鈧繄娈戞稉姘閸氼偂绠熼敍?   * 娑撳秵濡搁崗铚傜秼閻忣垳褰旈崡蹇氼唴濞夊嫭绱￠崚棰佹崲閸斺€崇湴閿涘苯鎮楃紒顓熸禌閹广垻浼呯敮锕€鐎烽崣閿嬫娑旂喐娲跨€硅妲楅弨鑸垫殐娣囶喗鏁奸懠鍐ㄦ纯閵?*/
   led_pixels[idx].green = g;
   led_pixels[idx].red = r;
   led_pixels[idx].blue = b;
@@ -83,8 +82,8 @@ void ws2812b_send(void)
 
   WS2812B_BuildDmaBuffer();
 
-  /* 鍚姩鍓嶅厛鍋滄涓婁竴娆?PWM DMA锛屾槸涓轰簡闃叉涓婁竴甯у紓甯告湭瀹屾垚鏃跺啀娆″惎鍔?DMA銆?   * HAL 浼氱淮鎶?TIM/DMA 鐘舵€佹満锛屽厛 Stop 鍐?Start 鍙互璁╄繛缁懡浠ゅ叿鏈夌‘瀹氳涓猴紱
-   * 杩欓噷浠嶇劧鍙皟鐢?HAL API锛屼笉鐩存帴纰?TIM2 瀵勫瓨鍣ㄣ€?*/
+  /* 閸氼垰濮╅崜宥呭帥閸嬫粍顒涙稉濠佺濞?PWM DMA閿涘本妲告稉杞扮啊闂冨弶顒涙稉濠佺鐢冪磽鐢憡婀€瑰本鍨氶弮璺哄晙濞嗏€虫儙閸?DMA閵?   * HAL 娴兼氨娣幎?TIM/DMA 閻樿埖鈧焦婧€閿涘苯鍘?Stop 閸?Start 閸欘垯浜掔拋鈺勭箾缂侇厼鎳℃禒銈呭徔閺堝鈥樼€规俺顢戞稉鐚寸幢
+   * 鏉╂瑩鍣锋禒宥囧姧閸欘亣鐨熼悽?HAL API閿涘奔绗夐惄瀛樺复绾?TIM2 鐎靛嫬鐡ㄩ崳銊ｂ偓?*/
   (void)HAL_TIM_PWM_Stop_DMA(&htim2, TIM_CHANNEL_3);
 
   status = HAL_TIM_PWM_Start_DMA(&htim2, TIM_CHANNEL_3, dma_buf, WS2812B_DMA_BUF_LEN);
@@ -94,7 +93,7 @@ void ws2812b_send(void)
     return;
   }
 
-  /* WS2812B 涓€甯ф暟鎹害 12 * 24 * 1.25us锛屽啀鍔犲浣嶄綆鐢靛钩锛岃繙灏忎簬 20ms銆?   * 璁剧疆鏈夐檺绛夊緟鏃堕棿鑰屼笉鏄案涔呴樆濉烇紝鏄负浜?DMA/HAL 鐘舵€佸紓甯告椂涓嶆嫋姝?LED 浠诲姟銆?*/
+  /* WS2812B 娑撯偓鐢勬殶閹诡喚瀹?12 * 24 * 1.25us閿涘苯鍟€閸旂姴顦叉担宥勭秵閻㈤潧閽╅敍宀冪箼鐏忓繋绨?20ms閵?   * 鐠佸墽鐤嗛張澶愭缁涘绶熼弮鍫曟？閼板奔绗夐弰顖涙娑斿懘妯嗘繅鐑囩礉閺勵垯璐熸禍?DMA/HAL 閻樿埖鈧礁绱撶敮鍛婃娑撳秵瀚嬪?LED 娴犺濮熼妴?*/
   if (osSemaphoreAcquire(ws2812b_dma_done_sem, WS2812B_DMA_TIMEOUT_MS) != osOK)
   {
     (void)HAL_TIM_PWM_Stop_DMA(&htim2, TIM_CHANNEL_3);
@@ -125,11 +124,11 @@ static void WS2812B_BuildDmaBuffer(void)
   uint32_t offset = 0U;
   uint32_t i;
 
-  /* WS2812B 没有独立帧头，只靠总线保持低电平来复位内部接收状态机。
-   * 在 remoteproc 调试过程中，如果上一帧被打断或时序曾经错误，灯珠可能停在“半包”状态；
-   * 下一帧一上来就是数据位时，第一颗灯会把它误当成旧帧续包，典型现象就是只亮一半、白色或后续不变色。
-   * 因此本驱动在数据前后都放置 reset 低电平：前 reset 清空接收状态，后 reset 锁存本帧颜色。
-   * 全过程仍然通过 TIM2 PWM + DMA 输出 CCR=0，不直接操作 GPIO，符合只使用 HAL 的约束。 */
+  /* WS2812B 娌℃湁鐙珛甯уご锛屽彧闈犳€荤嚎淇濇寔浣庣數骞虫潵澶嶄綅鍐呴儴鎺ユ敹鐘舵€佹満銆?
+   * 鍦?remoteproc 璋冭瘯杩囩▼涓紝濡傛灉涓婁竴甯ц鎵撴柇鎴栨椂搴忔浘缁忛敊璇紝鐏彔鍙兘鍋滃湪鈥滃崐鍖呪€濈姸鎬侊紱
+   * 涓嬩竴甯т竴涓婃潵灏辨槸鏁版嵁浣嶆椂锛岀涓€棰楃伅浼氭妸瀹冭褰撴垚鏃у抚缁寘锛屽吀鍨嬬幇璞″氨鏄彧浜竴鍗娿€佺櫧鑹叉垨鍚庣画涓嶅彉鑹层€?
+   * 鍥犳鏈┍鍔ㄥ湪鏁版嵁鍓嶅悗閮芥斁缃?reset 浣庣數骞筹細鍓?reset 娓呯┖鎺ユ敹鐘舵€侊紝鍚?reset 閿佸瓨鏈抚棰滆壊銆?
+   * 鍏ㄨ繃绋嬩粛鐒堕€氳繃 TIM2 PWM + DMA 杈撳嚭 CCR=0锛屼笉鐩存帴鎿嶄綔 GPIO锛岀鍚堝彧浣跨敤 HAL 鐨勭害鏉熴€?*/
   while (offset < WS2812B_RESET_BITS)
   {
     dma_buf[offset] = 0U;
@@ -143,8 +142,8 @@ static void WS2812B_BuildDmaBuffer(void)
     WS2812B_PutByteToDmaBuffer(led_pixels[i].blue, &offset);
   }
 
-  /* 当前 .ioc 中 TIM2 输出时钟是 209MHz，ARR=260 时一位周期约 1.249us。
-   * 50 个 CCR=0 周期约 62us，满足 WS2812B 数据手册中复位低电平大于 50us 的要求。 */
+  /* 褰撳墠 .ioc 涓?TIM2 杈撳嚭鏃堕挓鏄?209MHz锛孉RR=260 鏃朵竴浣嶅懆鏈熺害 1.249us銆?
+   * 50 涓?CCR=0 鍛ㄦ湡绾?62us锛屾弧瓒?WS2812B 鏁版嵁鎵嬪唽涓浣嶄綆鐢靛钩澶т簬 50us 鐨勮姹傘€?*/
   while (offset < WS2812B_DMA_BUF_LEN)
   {
     dma_buf[offset] = 0U;
@@ -172,232 +171,6 @@ static void WS2812B_PutByteToDmaBuffer(uint8_t value, uint32_t *offset)
 
 static void WS2812B_ReportHalError(void)
 {
-  /* 浣犲凡瑕佹眰鍘绘帀 PD6 鐘舵€佺伅鍔熻兘锛屽洜姝よ繖閲屼笉鍐嶅仛鏈湴 GPIO 鎶ラ敊闂儊銆?   * 濡傛灉 RPMsg 宸茬粡寤虹珛锛屽敖閲忔妸涓ラ噸纭欢閿欒涓婃姤缁?A7锛涘鏋滄鏃堕摼璺湭灏辩华锛?   * rpmsg_send_string 鍐呴儴浼氶潤榛樿繑鍥烇紝閬垮厤閿欒澶勭悊鍐嶅紩鍏ラ樆濉炪€?*/
+  /* 娴ｇ姴鍑＄憰浣圭湴閸樼粯甯€ PD6 閻樿埖鈧胶浼呴崝鐔诲厴閿涘苯娲滃銈堢箹闁插奔绗夐崘宥呬粵閺堫剙婀?GPIO 閹躲儵鏁婇梻顏嗗剨閵?   * 婵″倹鐏?RPMsg 瀹歌尙绮″铏圭彌閿涘苯鏁栭柌蹇斿Ω娑撱儵鍣哥涵顑挎闁挎瑨顕ゆ稉濠冨Г缂?A7閿涙稑顩ч弸婊勵劃閺冨爼鎽肩捄顖涙弓鐏忚京鍗庨敍?   * rpmsg_send_string 閸愬懘鍎存导姘舵饯姒涙绻戦崶鐑囩礉闁灝鍘ら柨娆掝嚖婢跺嫮鎮婇崘宥呯穿閸忋儵妯嗘繅鐐偓?*/
   rpmsg_send_string("EVENT:ERR_HAL");
 }
-=======
-#include "ws2812b.h"
-#include "tim.h"
-
-#define WS2812B_BITS_PER_LED 24U
-#define WS2812B_RESET_LEN    80U
-#define WS2812B_BUF_LEN      ((WS2812B_LED_COUNT * WS2812B_BITS_PER_LED) + WS2812B_RESET_LEN)
-#define WS2812B_CCR_0        35U
-#define WS2812B_CCR_1        85U
-
-static uint32_t ws2812b_buffer[WS2812B_BUF_LEN];
-
-volatile uint8_t ws2812b_dma_done = 1U;
-volatile uint32_t ws2812b_tx_count = 0U;
-volatile uint32_t ws2812b_dma_done_count = 0U;
-volatile uint32_t ws2812b_timeout_count = 0U;
-volatile uint32_t ws2812b_start_fail_count = 0U;
-volatile HAL_StatusTypeDef ws2812b_last_status = HAL_OK;
-
-static uint8_t WS2812B_LimitBrightness(uint8_t value)
-{
-  return (value > WS2812B_MAX_BRIGHTNESS) ? WS2812B_MAX_BRIGHTNESS : value;
-}
-
-static void WS2812B_FillResetCode(void)
-{
-  uint32_t start = WS2812B_LED_COUNT * WS2812B_BITS_PER_LED;
-
-  for (uint32_t i = 0; i < WS2812B_RESET_LEN; i++)
-  {
-    ws2812b_buffer[start + i] = 0U;
-  }
-}
-
-static void WS2812B_Wheel(uint8_t pos, uint8_t *red, uint8_t *green, uint8_t *blue)
-{
-  pos = 255U - pos;
-  if (pos < 85U)
-  {
-    *red = 255U - (pos * 3U);
-    *green = 0U;
-    *blue = pos * 3U;
-  }
-  else if (pos < 170U)
-  {
-    pos -= 85U;
-    *red = 0U;
-    *green = pos * 3U;
-    *blue = 255U - (pos * 3U);
-  }
-  else
-  {
-    pos -= 170U;
-    *red = pos * 3U;
-    *green = 255U - (pos * 3U);
-    *blue = 0U;
-  }
-}
-
-void WS2812B_Init(void)
-{
-  WS2812B_FillColor(0U, 0U, 0U);
-  (void)WS2812B_Show();
-}
-
-void WS2812B_SetPixelColor(uint16_t index, uint8_t red, uint8_t green, uint8_t blue)
-{
-  if (index >= WS2812B_LED_COUNT)
-  {
-    return;
-  }
-
-  red = WS2812B_LimitBrightness(red);
-  green = WS2812B_LimitBrightness(green);
-  blue = WS2812B_LimitBrightness(blue);
-
-  uint32_t color_grb = ((uint32_t)green << 16) | ((uint32_t)red << 8) | blue;
-  uint32_t buffer_index = (uint32_t)index * WS2812B_BITS_PER_LED;
-
-  for (int8_t bit = 23; bit >= 0; bit--)
-  {
-    ws2812b_buffer[buffer_index++] = ((color_grb >> bit) & 0x01U) ? WS2812B_CCR_1 : WS2812B_CCR_0;
-  }
-}
-
-void WS2812B_FillColor(uint8_t red, uint8_t green, uint8_t blue)
-{
-  for (uint16_t i = 0; i < WS2812B_LED_COUNT; i++)
-  {
-    WS2812B_SetPixelColor(i, red, green, blue);
-  }
-}
-
-HAL_StatusTypeDef WS2812B_Show(void)
-{
-  HAL_StatusTypeDef status;
-  uint32_t start_tick;
-
-  WS2812B_FillResetCode();
-  ws2812b_tx_count++;
-  WS2812B_PinAsTimer();
-
-  HAL_TIM_PWM_Stop_DMA(&htim2, TIM_CHANNEL_3);
-  __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 0U);
-
-  ws2812b_dma_done = 0U;
-  status = HAL_TIM_PWM_Start_DMA(&htim2, TIM_CHANNEL_3, ws2812b_buffer, WS2812B_BUF_LEN);
-  ws2812b_last_status = status;
-  if (status != HAL_OK)
-  {
-    ws2812b_start_fail_count++;
-    ws2812b_dma_done = 1U;
-    return status;
-  }
-
-  start_tick = HAL_GetTick();
-  while (ws2812b_dma_done == 0U)
-  {
-    if ((HAL_GetTick() - start_tick) > 50U)
-    {
-      HAL_TIM_PWM_Stop_DMA(&htim2, TIM_CHANNEL_3);
-      __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 0U);
-      ws2812b_timeout_count++;
-      ws2812b_last_status = HAL_TIMEOUT;
-      ws2812b_dma_done = 1U;
-      return HAL_TIMEOUT;
-    }
-  }
-
-  HAL_TIM_PWM_Stop_DMA(&htim2, TIM_CHANNEL_3);
-  __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 0U);
-  ws2812b_last_status = HAL_OK;
-  return HAL_OK;
-}
-
-HAL_StatusTypeDef WS2812B_Command(WS2812B_ColorCmd_t command)
-{
-  switch (command)
-  {
-    case WS2812B_COLOR_RED:
-      WS2812B_FillColor(255U, 0U, 0U);
-      break;
-    case WS2812B_COLOR_GREEN:
-      WS2812B_FillColor(0U, 255U, 0U);
-      break;
-    case WS2812B_COLOR_BLUE:
-      WS2812B_FillColor(0U, 0U, 255U);
-      break;
-    case WS2812B_COLOR_OFF:
-      WS2812B_FillColor(0U, 0U, 0U);
-      break;
-    default:
-      return HAL_ERROR;
-  }
-
-  return WS2812B_Show();
-}
-
-void WS2812B_Test(void)
-{
-  WS2812B_FillColor(0U, 0U, 0U);
-  WS2812B_SetPixelColor(0U, WS2812B_MAX_BRIGHTNESS, 0U, 0U);
-  (void)WS2812B_Show();
-}
-
-void WS2812B_RainbowStep(uint8_t step)
-{
-  static uint8_t color_offset = 0U;
-  uint8_t red;
-  uint8_t green;
-  uint8_t blue;
-
-  for (uint16_t i = 0; i < WS2812B_LED_COUNT; i++)
-  {
-    WS2812B_Wheel((uint8_t)(((i * 256U) / WS2812B_LED_COUNT + color_offset) & 0xFFU),
-                  &red, &green, &blue);
-    WS2812B_SetPixelColor(i, red, green, blue);
-  }
-
-  color_offset += step;
-  (void)WS2812B_Show();
-}
-
-void WS2812B_Rainbow(void)
-{
-  WS2812B_RainbowStep(2U);
-}
-
-void WS2812B_PinAsGpio(GPIO_PinState state)
-{
-  GPIO_InitTypeDef GPIO_InitStruct = {0};
-
-  HAL_TIM_PWM_Stop_DMA(&htim2, TIM_CHANNEL_3);
-  __HAL_RCC_GPIOB_CLK_ENABLE();
-
-  GPIO_InitStruct.Pin = GPIO_PIN_10;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, state);
-}
-
-void WS2812B_PinAsTimer(void)
-{
-  GPIO_InitTypeDef GPIO_InitStruct = {0};
-
-  __HAL_RCC_GPIOB_CLK_ENABLE();
-
-  GPIO_InitStruct.Pin = GPIO_PIN_10;
-  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
-  GPIO_InitStruct.Alternate = GPIO_AF1_TIM2;
-  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-}
-
-void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim)
-{
-  if (htim->Instance == TIM2)
-  {
-    ws2812b_dma_done = 1U;
-    ws2812b_dma_done_count++;
-  }
-}
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9

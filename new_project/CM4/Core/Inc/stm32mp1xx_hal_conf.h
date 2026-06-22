@@ -33,11 +33,7 @@
   * @brief This is the list of modules to be used in the HAL driver
   */
 #define HAL_MODULE_ENABLED
-<<<<<<< HEAD
   #define HAL_ADC_MODULE_ENABLED
-=======
-  /*#define HAL_ADC_MODULE_ENABLED   */
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
 /*#define HAL_CEC_MODULE_ENABLED   */
 /*#define HAL_CRC_MODULE_ENABLED   */
 /*#define HAL_CRYP_MODULE_ENABLED   */

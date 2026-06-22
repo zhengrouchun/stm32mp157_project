@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
@@ -184,87 +183,6 @@ void SystemClock_Config(void)
                               |RCC_CLOCKTYPE_PCLK5;
   RCC_ClkInitStruct.AXISSInit.AXI_Clock = RCC_AXISSOURCE_HSI;
   RCC_ClkInitStruct.AXISSInit.AXI_Div = RCC_AXI_DIV1;
-=======
-/* USER CODE BEGIN Header */
-/**
-  ******************************************************************************
-  * @file           : main.c
-  * @brief          : WS2812B color test program
-  ******************************************************************************
-  */
-/* USER CODE END Header */
-
-#include "main.h"
-#include "dma.h"
-#include "tim.h"
-#include "gpio.h"
-#include "ws2812b.h"
-
-void SystemClock_Config(void);
-
-static void WS2812B_ColorHold(uint8_t red, uint8_t green, uint8_t blue, uint32_t delay_ms)
-{
-  WS2812B_FillColor(red, green, blue);
-  (void)WS2812B_Show();
-  HAL_Delay(delay_ms);
-}
-
-int main(void)
-{
-  HAL_Init();
-
-  if (IS_ENGINEERING_BOOT_MODE())
-  {
-    SystemClock_Config();
-  }
-
-  MX_GPIO_Init();
-  MX_DMA_Init();
-  MX_TIM2_Init();
-
-  HAL_Delay(100U);
-  WS2812B_Init();
-
-  while (1)
-  {
-    WS2812B_ColorHold(8U, 0U, 0U, 800U);
-    WS2812B_ColorHold(0U, 8U, 0U, 800U);
-    WS2812B_ColorHold(0U, 0U, 8U, 800U);
-    WS2812B_ColorHold(0U, 0U, 0U, 300U);
-
-    for (uint16_t i = 0U; i < 255U; i++)
-    {
-      WS2812B_RainbowStep(1U);
-      HAL_Delay(30U);
-    }
-  }
-}
-
-void SystemClock_Config(void)
-{
-  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
-  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
-
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_LSI;
-  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
-  RCC_OscInitStruct.HSIDivValue = RCC_HSI_DIV1;
-  RCC_OscInitStruct.LSIState = RCC_LSI_ON;
-  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
-  RCC_OscInitStruct.PLL2.PLLState = RCC_PLL_NONE;
-  RCC_OscInitStruct.PLL3.PLLState = RCC_PLL_NONE;
-  RCC_OscInitStruct.PLL4.PLLState = RCC_PLL_NONE;
-  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_ACLK
-                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2
-                              |RCC_CLOCKTYPE_PCLK3|RCC_CLOCKTYPE_PCLK4
-                              |RCC_CLOCKTYPE_PCLK5;
-  RCC_ClkInitStruct.AXISSInit.AXI_Clock = RCC_AXISSOURCE_HSI;
-  RCC_ClkInitStruct.AXISSInit.AXI_Div = RCC_AXI_DIV1;
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
   RCC_ClkInitStruct.MCUInit.MCU_Clock = RCC_MCUSSOURCE_HSI;
   RCC_ClkInitStruct.MCUInit.MCU_Div = RCC_MCU_DIV1;
   RCC_ClkInitStruct.APB4_Div = RCC_APB4_DIV1;
@@ -272,7 +190,6 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB1_Div = RCC_APB1_DIV1;
   RCC_ClkInitStruct.APB2_Div = RCC_APB2_DIV1;
   RCC_ClkInitStruct.APB3_Div = RCC_APB3_DIV1;
-<<<<<<< HEAD
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct) != HAL_OK)
   {
@@ -333,27 +250,3 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
-=======
-
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct) != HAL_OK)
-  {
-    Error_Handler();
-  }
-}
-
-void Error_Handler(void)
-{
-  __disable_irq();
-  while (1)
-  {
-  }
-}
-
-#ifdef USE_FULL_ASSERT
-void assert_failed(uint8_t *file, uint32_t line)
-{
-  (void)file;
-  (void)line;
-}
-#endif /* USE_FULL_ASSERT */
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9

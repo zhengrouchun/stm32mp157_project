@@ -541,9 +541,9 @@ void vTaskBuzzer_Ctrl(void *pvParameters)
     {
         if (xQueueReceive(xBeepQueue, &delay_ms, portMAX_DELAY) == pdPASS)
         {
-            HAL_GPIO_WritePin(GPIOG, GPIO_PIN_7, GPIO_PIN_SET);   /* 蜂鸣器ON */
+            HAL_GPIO_WritePin(GPIOG, GPIO_PIN_7, GPIO_PIN_RESET);   /* 蜂鸣器ON */
             vTaskDelay(pdMS_TO_TICKS(delay_ms));
-            HAL_GPIO_WritePin(GPIOG, GPIO_PIN_7, GPIO_PIN_RESET); /* 蜂鸣器OFF */
+            HAL_GPIO_WritePin(GPIOG, GPIO_PIN_7, GPIO_PIN_SET); /* 蜂鸣器OFF */
         }
     }
 }

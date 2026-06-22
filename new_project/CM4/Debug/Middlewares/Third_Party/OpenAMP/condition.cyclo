@@ -4,8 +4,4 @@
 ../../Middlewares/Third_Party/OpenAMP/libmetal/lib/include/metal/mutex.h:61:20:metal_mutex_acquire	1
 ../../Middlewares/Third_Party/OpenAMP/libmetal/lib/include/metal/mutex.h:71:20:metal_mutex_release	1
 ../../Middlewares/Third_Party/OpenAMP/libmetal/lib/include/metal/mutex.h:81:19:metal_mutex_is_acquired	1
-<<<<<<< HEAD
-D:/Stu15/IPC-Communication/RPMsg_UART_ADC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/generic/condition.c:17:5:metal_condition_wait	8
-=======
-D:/Stu15/IPC-Communication/RPMsg_TEST/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/generic/condition.c:17:5:metal_condition_wait	8
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
+D:/Stu15/IPC-Communication/RPMsg_UART_ADC/new_project/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/generic/condition.c:17:5:metal_condition_wait	8

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ../Core/Src/ws2812b.c:38:6:ws2812b_init	24	static
 ../Core/Src/ws2812b.c:50:6:ws2812b_set_all	24	static
 ../Core/Src/ws2812b.c:60:6:ws2812b_set_one	16	static
@@ -8,19 +7,3 @@
 ../Core/Src/ws2812b.c:122:13:WS2812B_BuildDmaBuffer	16	static
 ../Core/Src/ws2812b.c:153:13:WS2812B_PutByteToDmaBuffer	24	static
 ../Core/Src/ws2812b.c:172:13:WS2812B_ReportHalError	8	static
-=======
-../Core/Src/ws2812b.c:19:16:WS2812B_LimitBrightness	16	static
-../Core/Src/ws2812b.c:24:13:WS2812B_FillResetCode	16	static
-../Core/Src/ws2812b.c:34:13:WS2812B_Wheel	24	static
-../Core/Src/ws2812b.c:59:6:WS2812B_Init	8	static
-../Core/Src/ws2812b.c:65:6:WS2812B_SetPixelColor	40	static
-../Core/Src/ws2812b.c:85:6:WS2812B_FillColor	24	static
-../Core/Src/ws2812b.c:93:19:WS2812B_Show	16	static
-../Core/Src/ws2812b.c:135:19:WS2812B_Command	16	static
-../Core/Src/ws2812b.c:158:6:WS2812B_Test	8	static
-../Core/Src/ws2812b.c:165:6:WS2812B_RainbowStep	24	static
-../Core/Src/ws2812b.c:183:6:WS2812B_Rainbow	8	static
-../Core/Src/ws2812b.c:188:6:WS2812B_PinAsGpio	40	static
-../Core/Src/ws2812b.c:203:6:WS2812B_PinAsTimer	32	static
-../Core/Src/ws2812b.c:217:6:HAL_TIM_PWM_PulseFinishedCallback	16	static
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9

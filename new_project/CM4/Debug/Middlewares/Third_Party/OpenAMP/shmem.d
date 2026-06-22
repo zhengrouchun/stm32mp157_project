@@ -1,9 +1,5 @@
 Middlewares/Third_Party/OpenAMP/shmem.o: \
-<<<<<<< HEAD
- D:/Stu15/IPC-Communication/RPMsg_UART_ADC/Middlewares/Third_Party/OpenAMP/libmetal/lib/shmem.c \
-=======
- D:/Stu15/IPC-Communication/RPMsg_TEST/Middlewares/Third_Party/OpenAMP/libmetal/lib/shmem.c \
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
+ D:/Stu15/IPC-Communication/RPMsg_UART_ADC/new_project/Middlewares/Third_Party/OpenAMP/libmetal/lib/shmem.c \
  ../../Middlewares/Third_Party/OpenAMP/libmetal/lib/include/metal/assert.h \
  ../../Middlewares/Third_Party/OpenAMP/libmetal/lib/include/metal/system/generic/assert.h \
  ../../Middlewares/Third_Party/OpenAMP/libmetal/lib/include/metal/errno.h \

@@ -1,10 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-<<<<<<< HEAD
 	<name>RPMsg_UART_ADC_CM4</name>
-=======
-	<name>RPMsg_TEST_CM4</name>
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
 	<comment></comment>
 	<projects>
 	</projects>
@@ -29,13 +25,8 @@
 		<nature>com.st.stm32cube.ide.mcu.MCUCubeProjectNature</nature>
 		<nature>com.st.stm32cube.ide.mcu.MCUAdvancedStructureProjectNature</nature>
 		<nature>com.st.stm32cube.ide.mcu.MCUEndUserDisabledTrustZoneProjectNature</nature>
-<<<<<<< HEAD
 		<nature>com.st.stm32cube.ide.mcu.MCUSingleCpuProjectNature</nature>
 		<nature>com.st.stm32cube.ide.mpu.projectnatures.core.MPUEmbeddedMCUProjectNature</nature>
-=======
-		<nature>com.st.stm32cube.ide.mpu.projectnatures.core.MPUEmbeddedMCUProjectNature</nature>
-		<nature>com.st.stm32cube.ide.mcu.MCUSingleCpuProjectNature</nature>
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
 		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 	</natures>
@@ -51,7 +42,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/Drivers/STM32MP1xx_HAL_Driver/Src/stm32mp1xx_hal.c</locationURI>
 		</link>
 		<link>
-<<<<<<< HEAD
 			<name>Drivers/STM32MP1xx_HAL_Driver/stm32mp1xx_hal_adc.c</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Drivers/STM32MP1xx_HAL_Driver/Src/stm32mp1xx_hal_adc.c</locationURI>
@@ -62,8 +52,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/Drivers/STM32MP1xx_HAL_Driver/Src/stm32mp1xx_hal_adc_ex.c</locationURI>
 		</link>
 		<link>
-=======
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
 			<name>Drivers/STM32MP1xx_HAL_Driver/stm32mp1xx_hal_cortex.c</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Drivers/STM32MP1xx_HAL_Driver/Src/stm32mp1xx_hal_cortex.c</locationURI>
@@ -144,14 +132,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/Drivers/STM32MP1xx_HAL_Driver/Src/stm32mp1xx_hal_uart_ex.c</locationURI>
 		</link>
 		<link>
-<<<<<<< HEAD
 			<name>Drivers/STM32MP1xx_HAL_Driver/stm32mp1xx_ll_adc.c</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Drivers/STM32MP1xx_HAL_Driver/Src/stm32mp1xx_ll_adc.c</locationURI>
 		</link>
 		<link>
-=======
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
 			<name>Middlewares/Third_Party/FreeRTOS/cmsis_os2.c</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c</locationURI>
@@ -214,11 +199,7 @@
 		<link>
 			<name>Middlewares/Third_Party/OpenAMP/CMakeLists.txt</name>
 			<type>1</type>
-<<<<<<< HEAD
 			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/open-amp/lib/rpmsg/CMakeLists.txt</locationURI>
-=======
-			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/open-amp/lib/proxy/CMakeLists.txt</locationURI>
->>>>>>> 042c0689b3d30a66b27a2a4342a332c9bfc9e0a9
 		</link>
 		<link>
 			<name>Middlewares/Third_Party/OpenAMP/condition.c</name>

@@ -81,6 +81,7 @@ class PomodoroWindow(QMainWindow):
     pause_requested = pyqtSignal()
     resume_requested = pyqtSignal()
     stop_requested = pyqtSignal()
+    exit_requested = pyqtSignal()
     led_test_requested = pyqtSignal(str)
     beep_test_requested = pyqtSignal()
     settings_save_requested = pyqtSignal(dict)
@@ -172,6 +173,8 @@ class PomodoroWindow(QMainWindow):
         self.pause_button = QPushButton("暂停")
         self.stop_button = QPushButton("结束专注")
         self.exit_button = QPushButton("退出")
+        for button in (self.start_button, self.pause_button, self.stop_button, self.exit_button):
+            button.setAutoRepeat(False)
         button_layout.addWidget(self.start_button)
         button_layout.addWidget(self.pause_button)
         button_layout.addWidget(self.stop_button)
@@ -180,10 +183,12 @@ class PomodoroWindow(QMainWindow):
         test_layout = QHBoxLayout()
         for color, text in (("R", "红灯"), ("G", "绿灯"), ("B", "蓝灯"), ("OFF", "熄灭")):
             button = QPushButton(text)
-            button.clicked.connect(lambda checked, value=color: self.led_test_requested.emit(value))
+            button.setAutoRepeat(False)
+            button.pressed.connect(lambda value=color: self.led_test_requested.emit(value))
             test_layout.addWidget(button)
         beep_button = QPushButton("蜂鸣器")
-        beep_button.clicked.connect(self.beep_test_requested.emit)
+        beep_button.setEnabled(False)
+        beep_button.setText("蜂鸣器(疲劳时响)")
         test_layout.addWidget(beep_button)
 
         layout.addWidget(self.status_label)
@@ -193,10 +198,10 @@ class PomodoroWindow(QMainWindow):
         layout.addLayout(button_layout)
         layout.addLayout(test_layout)
 
-        self.start_button.clicked.connect(self._emit_start)
-        self.pause_button.clicked.connect(self._emit_pause_or_resume)
-        self.stop_button.clicked.connect(self.stop_requested.emit)
-        self.exit_button.clicked.connect(QApplication.instance().quit)
+        self.start_button.pressed.connect(self._emit_start)
+        self.pause_button.pressed.connect(self._emit_pause_or_resume)
+        self.stop_button.pressed.connect(self.stop_requested.emit)
+        self.exit_button.pressed.connect(self.exit_requested.emit)
         return page
 
     def _build_history_tab(self):

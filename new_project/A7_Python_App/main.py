@@ -90,6 +90,7 @@ class PomodoroController:
         self.window.pause_requested.connect(self.pause_focus)
         self.window.resume_requested.connect(self.resume_focus)
         self.window.stop_requested.connect(lambda: self.stop_focus("interrupted"))
+        self.window.exit_requested.connect(self.exit_app)
         self.window.led_test_requested.connect(self.test_led)
         self.window.beep_test_requested.connect(self.test_beep)
         self.window.settings_save_requested.connect(self.save_settings)
@@ -196,8 +197,13 @@ class PomodoroController:
         self._mark_data_dirty()
 
     def test_beep(self):
-        self._send_hardware(self.rpmsg_client.send_beep_once)
+        # 蜂鸣器只在疲劳报警时触发，避免测试按钮导致有源蜂鸣器长鸣。
         self._mark_data_dirty()
+
+    def exit_app(self):
+        self.rpmsg_client.send_led_off()
+        self.rpmsg_client.close()
+        QApplication.instance().exit(0)
 
     def save_settings(self, settings):
         for key, value in settings.items():
